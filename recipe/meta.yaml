@@ -19,6 +19,7 @@ requirements:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - setuptools
   host:
     - python
     - pip

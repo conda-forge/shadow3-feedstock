@@ -28,7 +28,7 @@ requirements:
     - matplotlib
     - numpy
     - pyqt
-    - scipy
+    - scipy >=1.8.0
     - xraylib
 
 test:

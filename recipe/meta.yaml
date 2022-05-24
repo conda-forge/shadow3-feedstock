@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/oasys-kit/shadow3.git
-  git_sha: 01ee1f1faaf1d2f64e35affe73c4fe1b14fc90a3
+  git_rev: 01ee1f1faaf1d2f64e35affe73c4fe1b14fc90a3
 
 build:
   number: 0

@@ -10,7 +10,7 @@ source:
   git_rev: 01ee1f1faaf1d2f64e35affe73c4fe1b14fc90a3
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win]
 
@@ -25,7 +25,7 @@ requirements:
     - numpy
   run:
     - python
-    - matplotlib
+    - matplotlib-base
     - numpy
     - pyqt
     - scipy

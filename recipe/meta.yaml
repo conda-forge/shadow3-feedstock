@@ -1,5 +1,5 @@
 {% set name = "shadow3" %}
-{% set version = "22.8.10" %}
+{% set version = "22.8.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8f5edad4e191dcd20dd9971cb9da1e687b16beb3c8ba8aa66515b677ec8ff47d
+  sha256: 4266945e6a1c2fa791e1a6630a1c25ef9d0d2cd158ed9323ca80bc6631aa5790
 
 build:
   number: 0

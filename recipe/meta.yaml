@@ -11,7 +11,9 @@ source:
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: |
+    alias gfortran=$FC  # [osx]
+    {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win]
 
 requirements:

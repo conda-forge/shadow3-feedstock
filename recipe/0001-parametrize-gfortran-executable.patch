@@ -1,0 +1,27 @@
+From accccd0498c357802a52d2e86a4c276a3f494ab2 Mon Sep 17 00:00:00 2001
+From: Max Rakitin <mrakitin@bnl.gov>
+Date: Sun, 28 Apr 2024 20:20:49 -0400
+Subject: [PATCH] parametrize gfortran executable
+
+---
+ setup.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 44f4e0a..c169b87 100644
+--- a/setup.py
++++ b/setup.py
+@@ -158,8 +158,9 @@ class BuildClib(build_clib, object):
+ if sys.platform == 'darwin':
+     compile_options = "_COMPILE4MAX"
+     import subprocess
++    gfortran_executable = os.getenv("FC", "gfortran")
+     #library_dirs=subprocess.check_output(["locate", "libgfortran.dylib"]).decode().replace("/libgfortran.dylib","").split("\n")[:-1]
+-    library_dirs=subprocess.check_output(["gfortran" , "--print-file-name" , "libgfortran.dylib"]).decode().replace("/libgfortran.dylib","").split("\n")[:-1]
++    library_dirs=subprocess.check_output([gfortran_executable, "--print-file-name" , "libgfortran.dylib"]).decode().replace("/libgfortran.dylib","").split("\n")[:-1]
+     extra_link_args = ['-Wl,-no_compact_unwind']
+     
+ elif sys.platform == 'linux':
+-- 
+2.44.0
+

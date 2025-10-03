@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 4017ceb47b7f544b5695a93edd3b9fd47e64c85099473a6251b08e776256bd24
   patches:
     - 0001-parametrize-gfortran-executable.patch
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [win]
 
@@ -20,6 +20,7 @@ requirements:
   build:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
